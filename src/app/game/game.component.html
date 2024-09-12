@@ -1,0 +1,11 @@
+<section class="field" id="field">
+  <div class="cardStack" id="cardStack">
+    <img
+      *ngFor="let card of [0, 1, 2, 3]; let i = index"
+      class="cardStack_img"
+      id="cardStack_img"
+      [src]="cardCover"
+      alt="Card cover."
+    />
+  </div>
+</section>
