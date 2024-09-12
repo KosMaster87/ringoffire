@@ -19,5 +19,14 @@
   > .cardStack_img {
     position: absolute;
     width: clamp(100px, 20vw + 1rem, 250px);
+    transition: transform 0.4s ease-in-out;
   }
+}
+
+.topCard {
+  cursor: pointer;
+}
+
+.topCard:hover {
+  transform: scale(1.06) !important;
 }
