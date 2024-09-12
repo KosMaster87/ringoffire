@@ -7,7 +7,7 @@ import { GameComponent } from '../game/game.component';
 @Component({
   selector: 'app-start-screen',
   standalone: true,
-  // imports: [HeaderComponent, FooterComponent, GameComponent], // Will ich was von hier in der GameComponent benutzen? Unwarscheinlich.
+  // imports: [GameComponent], // Will ich was von hier in der GameComponent benutzen? Unwarscheinlich.
   imports: [HeaderComponent, FooterComponent],
   templateUrl: './start-screen.component.html',
   styleUrl: './start-screen.component.scss',
@@ -15,10 +15,6 @@ import { GameComponent } from '../game/game.component';
 export class StartScreenComponent {
   constructor(private router: Router) {}
 
-  /**
-   * Nur eine Aufgabe.
-   * Start game.
-   */
   newGame() {
     this.router.navigateByUrl('/game'); // Navigiere zu GameComponent
   }

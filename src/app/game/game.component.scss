@@ -20,6 +20,7 @@
     position: absolute;
     width: clamp(100px, 20vw + 1rem, 250px);
     transition: transform 0.4s ease-in-out;
+    // transition: all 225ms;
   }
 }
 
@@ -28,5 +29,10 @@
 }
 
 .topCard:hover {
-  transform: scale(1.06) !important;
+  transform: scale(1.02) translateY(-10px);
+}
+
+.pickCard {
+  transition: all 225ms;
+  transform: scale(1.05) !important;
 }

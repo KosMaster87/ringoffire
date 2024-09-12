@@ -1,6 +1,5 @@
 <section class="field" id="field">
   <div class="cardStack" id="cardStack">
-
     <img
       *ngFor="let card of [0, 1, 2, 3]; let i = index"
       [ngStyle]="{ transform: 'translateX(' + i * 18 + 'px)' }"
@@ -10,14 +9,21 @@
       alt="Card cover {{ i }}"
     />
     <img
-    *ngFor="let card of [0]; let i = index"
-    [ngStyle]="{ transform: 'translateX(' + 1 * 80 + 'px)' }"
+      (click)="takeCard()"
+      [class.pickCard]="pickCardAnimation"
+      class="cardStack_img topCard"
+      id="cardStack_img"
+      src="./../../assets/img/cards/clubs_1.png"
+    />
+    <!-- <img
+      *ngFor="let card of [0]; let i = index"
+      [ngStyle]="{ transform: 'translateX(' + 1 * 80 + 'px)' }"
+      (click)="takeCard()"
       class="cardStack_img topCard"
       id="cardStack_img"
       src="./../../assets/img/cards/clubs_1.png"
       alt="Card cover {{ i }}"
-    />
-
+    /> -->
 
     <!-- ALTERNATIVE -->
     <!-- <img
