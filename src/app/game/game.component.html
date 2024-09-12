@@ -1,11 +1,32 @@
 <section class="field" id="field">
   <div class="cardStack" id="cardStack">
+
     <img
       *ngFor="let card of [0, 1, 2, 3]; let i = index"
+      [ngStyle]="{ transform: 'translateX(' + i * 18 + 'px)' }"
       class="cardStack_img"
       id="cardStack_img"
-      [src]="cardCover"
-      alt="Card cover."
+      src="./../../assets/img/cards/card_cover.png"
+      alt="Card cover {{ i }}"
     />
+    <img
+    *ngFor="let card of [0]; let i = index"
+    [ngStyle]="{ transform: 'translateX(' + 1 * 80 + 'px)' }"
+      class="cardStack_img"
+      id="cardStack_img"
+      src="./../../assets/img/cards/clubs_1.png"
+      alt="Card cover {{ i }}"
+    />
+
+
+    <!-- ALTERNATIVE -->
+    <!-- <img
+      *ngFor="let card of [0, 1, 2, 3, 4]; let i = index"
+      [ngStyle]="{ 'margin-left': (i * 11) + 'px' }"
+      class="cardStack_img"
+      id="cardStack_img"
+      src="./../../assets/img/cards/card_cover.png"
+      alt="Card cover {{ i }}"
+    /> -->
   </div>
 </section>

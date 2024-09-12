@@ -9,5 +9,4 @@ import { Component } from '@angular/core';
   styleUrl: './game.component.scss',
 })
 export class GameComponent {
-  cardCover = 'assets/img/cards/card_cover.png';
 }

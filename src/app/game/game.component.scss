@@ -2,7 +2,6 @@
   width: 100%;
   height: 100vh;
   background-image: url("./../../assets/img/gameboard.jpg");
-
   display: flex;
   align-items: center;
   justify-content: center;
@@ -10,15 +9,15 @@
 
 .cardStack {
   display: flex;
-  flex-wrap: wrap;
+  align-items: center;
   justify-content: center;
+  position: relative;
   gap: 1rem;
   width: 80%;
-  position: relative;
+  height: 80%;
 
   > .cardStack_img {
     position: absolute;
     width: clamp(100px, 20vw + 1rem, 250px);
-    flex: 1 1 1;
   }
 }
