@@ -1,0 +1,63 @@
+.startScreen {
+  background-image: url("./../../../src/assets/img/2560x1440\ red\ wall.avif");
+  background-position: 50% 50%;
+  background-repeat: no-repeat;
+  background-size: cover;
+  height: 100vh;
+  width: 100%;
+  flex-direction: column;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.startBox {
+  width: 100vw;
+  height: auto;
+  position: relative;
+  flex-direction: column;
+  display: flex;
+  align-items: center;
+}
+
+.startboxImage {
+  width: 50%;
+  height: auto;
+}
+
+.startBoxAbsolut {
+  position: absolute;
+  bottom: 4vh;
+}
+
+.startLabelRelativ {
+  position: relative;
+  width: 100%;
+  height: 100%;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.startLabel {
+  position: absolute;
+
+  cursor: pointer;
+  width: clamp(130px, 25vw, 300px);
+  transition: filter 0.5s ease;
+
+  &:hover {
+    filter: brightness(1.5);
+  }
+}
+
+.startGamePara {
+  position: absolute;
+
+  cursor: pointer;
+  -webkit-user-select: none;
+  user-select: none;
+  text-shadow: 3px 2px 2px rgba(0, 0, 0, 0.5019607843);
+  font-size: clamp(18px, 1rem, 32px);
+}
