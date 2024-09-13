@@ -34,5 +34,23 @@
 
 .pickCard {
   transition: all 225ms;
-  transform: scale(1.05) !important;
+  // transform: scale(1.05) !important;
+  animation: pickCardAnimation 1.2s ease-in-out;
+  transform: scale(1) translateX(140px) translateY(-350px) rotate(-10deg);
+}
+
+@keyframes pickCardAnimation {
+  0% {
+    transform: scale(1);
+  }
+  40% {
+    transform: scale(1.05);
+  }
+  60% {
+    transform: scale(1.05);
+  }
+  100% {
+    transform: scale(1) translateX(140px) translateY(-350px) rotate(-10deg);
+  }
+  
 }

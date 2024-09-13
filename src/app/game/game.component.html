@@ -1,20 +1,41 @@
 <section class="field" id="field">
   <div class="cardStack" id="cardStack">
+    <!-- <div *ngIf="false; then thenBlock; else elseBlock"></div>
+    <ng-template #thenBlock
+      >Zu rendernder Inhalt, wenn Bedingung erfüllt ist.
+      <img src="./../../assets/img/labelClean.webp" alt=""></ng-template
+    >
+    <ng-template #elseBlock
+      >Zu rendernder Inhalt, wenn Bedingung falsch ist.
+      <img src="./../../assets/img/cards/clubs_12.webp" alt="">
+      </ng-template
+    > -->
+    @for (Card of [0, 1, 2, 3]; track Card; let i = $index) {
     <img
-      *ngFor="let card of [0, 1, 2, 3]; let i = index"
-      [ngStyle]="{ transform: 'translateX(' + i * 18 + 'px)' }"
+      [ngStyle]="{
+        transform: 'translateX(' + calcPositionDieErstenVier(i) + ')'
+      }"
       class="cardStack_img"
       id="cardStack_img"
       src="assets/img/cards/card_cover.webp"
       alt="Card cover {{ i }}"
     />
+    }
+
     <img
       (click)="takeCard()"
-      [class.pickCard]="pickCardAnimation"
       class="cardStack_img topCard"
       id="cardStack_img"
-      src="assets/img/cards/clubs_1.webp"
+      src="assets/img/cards/card_cover.webp"
     />
+    <img
+      *ngIf="pickCardAnimation"
+      (click)="takeCard()"
+      class="cardStack_img pickCardAnimation pickCard"
+      id="cardStack_img"
+      src="assets/img/cards/spade_1.webp"
+    />
+
     <!-- <img
       *ngFor="let card of [0]; let i = index"
       [ngStyle]="{ transform: 'translateX(' + 1 * 80 + 'px)' }"
