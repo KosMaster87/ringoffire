@@ -35,6 +35,12 @@ export class GameComponent {
     if (!this.pickCardAnimation) {
       this.currentCard = this.game.stack.pop();
       this.pickCardAnimation = true;
+      
+      this.game.playedCards.push(this.currentCard);
+
+      console.log(this.game);
+      console.log('New card: ' + this.currentCard);
+      // console.log('Game is: ' + this.game);
 
       setTimeout(() => {
         this.pickCardAnimation = false;

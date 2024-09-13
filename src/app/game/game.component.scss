@@ -52,5 +52,14 @@
   100% {
     transform: scale(1) translateX(140px) translateY(-350px) rotate(-10deg);
   }
-  
+}
+
+.playedCard {
+  transform: "scale(1) translateX(" + calcPositionDieErstenVier(i) +
+    ") translateY(-350px) rotate(-10deg)";
+
+  > .cardStack_img {
+    position: absolute;
+    width: clamp(80px, 15vw + 1rem, 180px);
+  }
 }

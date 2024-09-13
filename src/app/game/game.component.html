@@ -28,6 +28,7 @@
       id="cardStack_img"
       src="assets/img/cards/card_cover.webp"
     />
+
     <img
       *ngIf="pickCardAnimation"
       (click)="takeCard()"
@@ -35,6 +36,35 @@
       id="cardStack_img"
       src="assets/img/cards/{{ currentCard }}.webp"
     />
+
+    <!-- <div *ngFor="let card of game.playedCard; let i = index">
+      <img [src]="'./../../assets/img/cards/' + card + '.webp'" alt="Card {{ i }}" />
+    </div> -->
+
+    <!-- <div
+      *ngFor="let playedCard of game.playedCards; let i = index"
+      class="playedCard"
+      [ngStyle]="{
+        transform:
+          'scale(1) translateX(' +
+          calcPositionDieErstenVier(i) +
+          ') translateY(-350px) rotate(-10deg)'
+      }"
+    >
+      <img
+        [src]="'assets/img/cards/' + playedCard + '.webp'"
+        alt="Card {{ i }}"
+      />
+    </div> -->
+
+    @for (playedCard of game.playedCards; track playedCard; let card = $index) {
+    <img
+      class="playedCard"
+      id="playedCard"
+      src="assets/img/cards/{{ playedCard }}.webp"
+      alt=""
+    />
+    }
 
     <!-- <img
       *ngFor="let card of [0]; let i = index"
