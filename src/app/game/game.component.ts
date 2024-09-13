@@ -11,28 +11,34 @@ import { Game } from '../../models/game';
 })
 export class GameComponent {
   pickCardAnimation = false;
+  currentCard: string = '';
   game: any;
 
   constructor() {
-    // this.game = Game
     this.newGame();
   }
 
-  ngOnInit(): void {
-    this.newGame();
-  }
+  // ngOnInit(): void {
+  //   this.newGame();
+  // }
 
   newGame() {
     this.game = new Game();
     console.log(this.game);
   }
 
-  takeCard() {
-    console.log('Linke Maustaste wurde geklickt.');
-    this.pickCardAnimation = true;
-  }
-
   calcPositionDieErstenVier(i: number) {
     return -i * 16 + 65 + 'px';
+  }
+
+  takeCard() {
+    if (!this.pickCardAnimation) {
+      this.currentCard = this.game.stack.pop();
+      this.pickCardAnimation = true;
+
+      setTimeout(() => {
+        this.pickCardAnimation = false;
+      }, 1200);
+    }
   }
 }
