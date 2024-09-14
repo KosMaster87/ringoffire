@@ -1,3 +1,5 @@
+<app-player></app-player>
+
 <section class="field" id="field">
   <div class="cardStack" id="cardStack">
     <!-- <div *ngIf="false; then thenBlock; else elseBlock"></div>
@@ -58,7 +60,7 @@
     </div> -->
 
     <div class="playedCardStack" id="playedCardStack">
-      @for (playedCard of game.playedCards; track playedCard; let card = $index)
+      @for (playedCard of game?.playedCards; track playedCard; let card = $index)
       {
       <img
         class="playedCard"
