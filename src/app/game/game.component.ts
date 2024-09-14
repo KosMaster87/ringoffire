@@ -1,8 +1,7 @@
 import { CommonModule } from '@angular/common';
-import { Component, inject } from '@angular/core';
+import { Component } from '@angular/core';
 import { Game } from '../../models/game';
 import { PlayerComponent } from '../player/player.component';
-import { RingOfFireService } from '../ring-of-fire.service';
 
 @Component({
   selector: 'app-game',
@@ -13,31 +12,29 @@ import { RingOfFireService } from '../ring-of-fire.service';
 })
 export class GameComponent {
   pickCardAnimation = false;
-
-  // players: string[] = [];
   currentCard: string | undefined;
   game: Game | undefined;
 
   constructor() {
-    // XY = inject(RingOfFireService);
-
     this.newGame();
   }
 
   newGame() {
     this.game = new Game();
     console.log(this.game);
-
-    // this.game.gameJson();
   }
 
   calcPositionDieErstenVier(i: number) {
     return -i * 16 + 65 + 'px';
   }
 
+  /**
+   * "Definite Assignment Assertion" bezeichnet. Es weist den Compiler an, dass
+   * die Variable oder das Property definitiv einen Wert haben wird, auch wenn es
+   * zur Compile-Zeit nicht offensichtlich ist.
+   */
   takeCard() {
-    // if (!this.pickCardAnimation && this.players.length > 0) {
-    if (!this.pickCardAnimation) {
+    if (!this.pickCardAnimation && this.game!.players.length > 0) {
       this.currentCard = this.game?.stack.pop() || '';
       this.pickCardAnimation = true;
 
@@ -48,12 +45,6 @@ export class GameComponent {
         this.currentCard = this.game?.stack.pop() || '';
         this.pickCardAnimation = false;
       }, 1200);
-
-      //   setTimeout(() => {
-      //     this.game?.playedCards.push(this.currentCard);
-      //     this.pickCardAnimation = false;
-      //   }, 1200);
-      // }
     }
   }
 }
