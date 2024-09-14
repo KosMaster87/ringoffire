@@ -10,7 +10,7 @@ import { GameComponent } from '../game/game.component';
   styleUrl: './player.component.scss',
 })
 export class PlayerComponent {
-  game: any;
-  @Input() name: string = '';
-  @Input() playerActive: boolean = false;
+  // game: any;
+  // @Input() name: string = '';
+  // @Input() playerActive: boolean = false;
 }

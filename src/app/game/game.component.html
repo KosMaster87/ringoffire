@@ -60,12 +60,12 @@
     </div> -->
 
     <div class="playedCardStack" id="playedCardStack">
-      @for (playedCard of game?.playedCards; track playedCard; let card = $index)
+      @for (PlayedCard of game?.playedCards; track PlayedCard; let card = $index)
       {
       <img
         class="playedCard"
         id="playedCard"
-        src="assets/img/cards/{{ playedCard }}.webp"
+        src="assets/img/cards/{{ PlayedCard }}.webp"
         alt=""
       />
       }

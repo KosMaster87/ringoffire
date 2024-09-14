@@ -13,6 +13,8 @@ import { RingOfFireService } from '../ring-of-fire.service';
 })
 export class GameComponent {
   pickCardAnimation = false;
+
+  // players: string[] = [];
   currentCard: string | undefined;
   game: Game | undefined;
 
@@ -25,6 +27,8 @@ export class GameComponent {
   newGame() {
     this.game = new Game();
     console.log(this.game);
+
+    // this.game.gameJson();
   }
 
   calcPositionDieErstenVier(i: number) {
@@ -32,13 +36,13 @@ export class GameComponent {
   }
 
   takeCard() {
+    // if (!this.pickCardAnimation && this.players.length > 0) {
     if (!this.pickCardAnimation) {
-      this.currentCard = this.game?.stack.pop() || ''; // benutze ich als ein zwischenspeicher.
+      this.currentCard = this.game?.stack.pop() || '';
       this.pickCardAnimation = true;
 
       console.log(this.game);
       console.log('New card: ' + this.currentCard);
-      // console.log('Game is: ' + this.game);
 
       setTimeout(() => {
         this.currentCard = this.game?.stack.pop() || '';
