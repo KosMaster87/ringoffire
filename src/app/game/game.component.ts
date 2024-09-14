@@ -33,16 +33,15 @@ export class GameComponent {
 
   takeCard() {
     if (!this.pickCardAnimation) {
-      this.currentCard = this.game.stack.pop();
+      this.currentCard = this.game.stack.pop(); // benutze ich als ein zwischenspeicher.
       this.pickCardAnimation = true;
-      
-      this.game.playedCards.push(this.currentCard);
 
       console.log(this.game);
       console.log('New card: ' + this.currentCard);
       // console.log('Game is: ' + this.game);
 
       setTimeout(() => {
+        this.game.playedCards.push(this.currentCard);
         this.pickCardAnimation = false;
       }, 1200);
     }

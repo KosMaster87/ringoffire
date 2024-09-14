@@ -57,14 +57,17 @@
       />
     </div> -->
 
-    @for (playedCard of game.playedCards; track playedCard; let card = $index) {
-    <img
-      class="playedCard"
-      id="playedCard"
-      src="assets/img/cards/{{ playedCard }}.webp"
-      alt=""
-    />
-    }
+    <div class="playedCardStack" id="playedCardStack">
+      @for (playedCard of game.playedCards; track playedCard; let card = $index)
+      {
+      <img
+        class="playedCard"
+        id="playedCard"
+        src="assets/img/cards/{{ playedCard }}.webp"
+        alt=""
+      />
+      }
+    </div>
 
     <!-- <img
       *ngFor="let card of [0]; let i = index"
