@@ -7,7 +7,7 @@ import { Injectable } from '@angular/core';
  * public as Access Modifier.
  */
 export class Game {
-  public players: string[] = ['Hanz', 'Peter', 'Kos', 'Boris'];
+  public players: string[] = ['Hanz', 'Peter'];
   public stack: string[] = [];
   public playedCards: string[] = [];
   public currentPlayer: number = 0;

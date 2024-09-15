@@ -8,5 +8,5 @@ export const routes: Routes = [
   { path: '', component: StartScreenComponent },
   { path: 'imprint', component: ImprintComponentComponent },
   { path: 'game', component: GameComponent },
-  { path: 'player', component: PlayerComponent },
+  // { path: 'player', component: PlayerComponent },
 ];

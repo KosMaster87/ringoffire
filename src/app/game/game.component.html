@@ -1,3 +1,4 @@
+<!-- Spieler Komponente -->
 <app-player></app-player>
 
 <section class="field" id="field">
@@ -54,9 +55,13 @@
     </div>
   </div>
 
+  <!-- Info Komponente -->
+  <app-game-info> </app-game-info>
+
   <button
     class="addPlayerBtn"
     id="addPlayerBtn"
+    (click)="openDialog()"
     mat-fab
     aria-label="Example icon button with a delete icon"
   >

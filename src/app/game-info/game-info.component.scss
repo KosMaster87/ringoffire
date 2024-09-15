@@ -1,0 +1,15 @@
+.gameInfoCard {
+  position: absolute;
+  bottom: 1.8rem;
+  left: 15rem;
+  right: 15rem;
+  color: whitesmoke;
+
+  display: flex;
+  align-items: self-start;
+}
+
+.gameInfoCard_title {
+  display: flex;
+  align-self: center;
+}

@@ -1,14 +1,40 @@
 import { CommonModule } from '@angular/common';
-import { Component, inject } from '@angular/core';
+import { ChangeDetectionStrategy, Component, inject } from '@angular/core';
+import { FormsModule } from '@angular/forms';
 import { PlayerComponent } from '../player/player.component';
 import { Game } from '../../models/game';
 import { MatButtonModule } from '@angular/material/button';
 import { MatIconModule } from '@angular/material/icon';
 
+import { MatFormFieldModule } from '@angular/material/form-field';
+import { MatInputModule } from '@angular/material/input';
+import { DialogAddPlayerComponent } from '../dialog-add-player/dialog-add-player.component';
+// import { MatDialog } from '@angular/material/dialog';
+import {
+  MAT_DIALOG_DATA,
+  MatDialog,
+  MatDialogActions,
+  MatDialogClose,
+  MatDialogContent,
+  MatDialogModule,
+  MatDialogRef,
+  MatDialogTitle,
+} from '@angular/material/dialog';
+import { GameInfoComponent } from '../game-info/game-info.component';
+
 @Component({
   selector: 'app-game',
   standalone: true,
-  imports: [CommonModule, PlayerComponent, MatButtonModule, MatIconModule],
+  imports: [
+    CommonModule,
+    PlayerComponent,
+    MatButtonModule,
+    MatIconModule,
+    FormsModule,
+    MatDialogModule,
+    GameInfoComponent,
+  ],
+  // changeDetection: ChangeDetectionStrategy.OnPush,
   templateUrl: './game.component.html',
   styleUrls: ['./game.component.scss'],
 })
@@ -16,12 +42,9 @@ export class GameComponent {
   pickCardAnimation = false;
   currentCard: string | undefined;
   playedCards: string[] | undefined;
-  // game: Game | undefined;
   game: Game | undefined = inject(Game);
 
-  // constructor(public game: Game) {
-  constructor() {
-    // this.newGame();
+  constructor(public dialog: MatDialog) {
     console.log(this.game!.players);
   }
 
@@ -48,6 +71,9 @@ export class GameComponent {
       console.log(this.game);
       console.log('New card: ' + this.currentCard);
 
+      // this.currentPlayer ++;
+      // this.currentPlayer = this.currentPlayer % this.players.length;
+
       setTimeout(() => {
         if (this.currentCard) {
           this.game!.playedCards!.push(this.currentCard);
@@ -55,5 +81,17 @@ export class GameComponent {
         this.pickCardAnimation = false;
       }, 1200);
     }
+  }
+
+  openDialog(): void {
+    const dialogRef = this.dialog.open(DialogAddPlayerComponent);
+
+    dialogRef.afterClosed().subscribe((name: string) => {
+      console.log('Soll der Name sein! ' + name);
+
+      if (name && name.length > 0) {
+        this.game!.players.push(name);
+      }
+    });
   }
 }
