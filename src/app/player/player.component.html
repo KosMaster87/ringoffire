@@ -1,15 +1,39 @@
-@for (PlayerName of game.players); track PlayerName; let i = $index {
-<section class="participant" id="participant" style="top: 0px">
+<!-- @for (playerName of game.players); track playerName; let i = $index {
+<section
+  [ngStyle]="{ 'top.px': 100 + i * 100 }"
+  class="participant"
+  id="participant"
+  style="top: 0px"
+>
   <div class="player" id="player">
     <img src="assets/img/avatar/avatar01.png" alt="Avatar image." />
-    <span>{{ PlayerName }}</span>
+    <span>{{ playerName }}</span>
   </div>
 </section>
-}
+} -->
 
-<!-- <section class="participant" id="participant" style="top: 0px">
+<section class="participant" id="participant" style="top: 0px">
   <div class="player" id="player">
     <img src="assets/img/avatar/avatar01.png" alt="Avatar image." />
     <span>Kos</span>
   </div>
-</section> -->
+</section>
+
+<!-- @for (valueKey of nestedArray; track valueKey; let idx = $index) {
+<div style="color: whitesmoke">valueKey {{ valueKey.key1 }}</div>
+
+} -->
+
+<section
+  *ngFor="let playerName of game.players; index as i; first as isFirst"
+  [ngStyle]="{ 'top.px': 100 + i * 100 }"
+  class="participant"
+  id="participant"
+  style="top: 0px"
+>
+  <div class="player" id="player">
+    <img src="assets/img/avatar/avatar01.png" alt="Avatar image." />
+    {{ i }}/{{ playerName.length }}. <span *ngIf="isFirst">default</span>
+    <span>{{ playerName }}</span>
+  </div>
+</section>

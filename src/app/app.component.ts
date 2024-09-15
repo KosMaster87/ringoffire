@@ -5,6 +5,7 @@ import { FooterComponent } from './shared/components/footer/footer.component';
 import { HeaderComponent } from './shared/components/header/header.component';
 import { GameComponent } from './game/game.component';
 import { PlayerComponent } from './player/player.component';
+import { RingOfFireService } from './ring-of-fire.service';
 
 @Component({
   selector: 'app-root',
@@ -22,4 +23,8 @@ import { PlayerComponent } from './player/player.component';
 })
 export class AppComponent {
   title = 'Ring of fire';
+
+  //  constructor(private ringOfFireService: RingOfFireService) {
+  //     console.log('Service initialized:', this.ringOfFireService);
+  //  }
 }

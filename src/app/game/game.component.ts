@@ -1,7 +1,7 @@
 import { CommonModule } from '@angular/common';
 import { Component } from '@angular/core';
-import { Game } from '../../models/game';
 import { PlayerComponent } from '../player/player.component';
+import { Game } from '../../models/game';
 
 @Component({
   selector: 'app-game',
@@ -13,10 +13,11 @@ import { PlayerComponent } from '../player/player.component';
 export class GameComponent {
   pickCardAnimation = false;
   currentCard: string | undefined;
-  game: Game | undefined;
+  // game: Game | undefined;
 
-  constructor() {
+  constructor(public game: Game) {
     this.newGame();
+    console.log(this.game!.players); 
   }
 
   newGame() {
@@ -35,14 +36,14 @@ export class GameComponent {
    */
   takeCard() {
     if (!this.pickCardAnimation && this.game!.players.length > 0) {
-      this.currentCard = this.game?.stack.pop() || '';
+      this.currentCard = this.game.stack.pop() || '';
       this.pickCardAnimation = true;
 
       console.log(this.game);
       console.log('New card: ' + this.currentCard);
 
       setTimeout(() => {
-        this.currentCard = this.game?.stack.pop() || '';
+        this.currentCard = this.game.stack.pop() || '';
         this.pickCardAnimation = false;
       }, 1200);
     }
