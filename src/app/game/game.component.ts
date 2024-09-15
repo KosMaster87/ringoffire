@@ -29,7 +29,7 @@ export class GameComponent {
   }
 
   calcPositionDieErstenVier(i: number) {
-    return -i * 16 + 65 + 'px';
+    return -i * 12 + 48 + 'px';
   }
 
   /**

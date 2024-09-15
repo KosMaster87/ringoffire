@@ -1,6 +1,6 @@
 @for (playerName of game.players; track playerName; let i = $index) {
 <section
-  [ngStyle]="{ 'top.px': 100 + i * 200 }"
+  [ngStyle]="{ 'top.px': 100 + (i * 200) }"
   class="participant"
   id="participant"
   style="top: 0px"

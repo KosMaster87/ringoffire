@@ -11,10 +11,5 @@ import { Game } from '../../models/game';
   styleUrl: './player.component.scss',
 })
 export class PlayerComponent {
-  // game: Game | undefined = inject(Game);
-
-  // @Input() name: string = '';
-  // @Input() playerActive: boolean = false;
-
   constructor(public game: Game) {}
 }
