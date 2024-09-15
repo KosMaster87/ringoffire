@@ -1,26 +1,5 @@
-<!-- @for (playerName of game.players); track playerName; let i = $index {
+@for (playerName of game.players; track playerName; let i = $index) {
 <section
-  [ngStyle]="{ 'top.px': 100 + i * 100 }"
-  class="participant"
-  id="participant"
-  style="top: 0px"
->
-  <div class="player" id="player">
-    <img src="assets/img/avatar/avatar01.png" alt="Avatar image." />
-    <span>{{ playerName }}</span>
-  </div>
-</section>
-} -->
-
-<!-- <section class="participant" id="participant" style="top: 0px">
-  <div class="player" id="player">
-    <img src="assets/img/avatar/avatar01.png" alt="Avatar image." />
-    <span>Kos</span>
-  </div>
-</section> -->
-
-<section
-  *ngFor="let playerName of game.players; index as i; first as isFirst"
   [ngStyle]="{ 'top.px': 100 + i * 200 }"
   class="participant"
   id="participant"
@@ -31,3 +10,24 @@
     <span>{{ playerName }}</span>
   </div>
 </section>
+}
+
+<!-- <section class="participant" id="participant" style="top: 0px">
+  <div class="player" id="player">
+    <img src="assets/img/avatar/avatar01.png" alt="Avatar image." />
+    <span>Kos</span>
+  </div>
+</section> -->
+
+<!-- <section
+  *ngFor="let playerName of game.players; index as i; first as isFirst"
+  [ngStyle]="{ 'top.px': 100 + i * 200 }"
+  class="participant"
+  id="participant"
+  style="top: 0px"
+>
+  <div class="player" id="player">
+    <img src="assets/img/avatar/avatar01.png" alt="Avatar image." />
+    <span>{{ playerName }}</span>
+  </div>
+</section> -->

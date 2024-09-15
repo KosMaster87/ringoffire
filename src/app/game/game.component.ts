@@ -13,9 +13,11 @@ import { Game } from '../../models/game';
 export class GameComponent {
   pickCardAnimation = false;
   currentCard: string | undefined;
+  playedCards: string[] | undefined;
   // game: Game | undefined;
   game: Game | undefined = inject(Game);
 
+  // constructor(public game: Game) {
   constructor() {
     // this.newGame();
     console.log(this.game!.players);
@@ -36,7 +38,8 @@ export class GameComponent {
    * zur Compile-Zeit nicht offensichtlich ist.
    */
   takeCard() {
-    if (!this.pickCardAnimation && this.game!.players.length > 0) {
+    // if (!this.pickCardAnimation && this.game!.players.length > 0) {
+    if (!this.pickCardAnimation) {
       this.currentCard = this.game!.stack.pop();
       this.pickCardAnimation = true;
 
@@ -44,7 +47,9 @@ export class GameComponent {
       console.log('New card: ' + this.currentCard);
 
       setTimeout(() => {
-        this.currentCard = this.game!.stack.pop();
+        if (this.currentCard) {
+          this.game!.playedCards!.push(this.currentCard);
+        }
         this.pickCardAnimation = false;
       }, 1200);
     }

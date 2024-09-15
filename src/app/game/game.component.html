@@ -3,6 +3,7 @@
 <section class="field" id="field">
   <div class="cardStack" id="cardStack">
     @for (Card of [0, 1, 2, 3]; track Card; let i = $index) {
+    <!-- Der Stapel -->
     <img
       [ngStyle]="{
         transform: 'translateX(' + calcPositionDieErstenVier(i) + ')'
@@ -14,6 +15,7 @@
     />
     }
 
+    <!-- Die Karte auf dem Stapel. -->
     <img
       (click)="takeCard()"
       class="cardStack_img topCard"
@@ -21,10 +23,19 @@
       src="assets/img/cards/card_cover.webp"
     />
 
+    <!-- Die Gezogene Karte.
     <img
       *ngIf="pickCardAnimation"
       (click)="takeCard()"
       class="cardStack_img pickCardAnimation pickCard"
+      id="cardStack_img"
+      src="assets/img/cards/{{ currentCard }}.webp"
+    /> -->
+    <!-- Die Gezogene Karte. -->
+    <img
+      *ngIf="pickCardAnimation"
+      (click)="takeCard()"
+      class="cardStack_img pickCard"
       id="cardStack_img"
       src="assets/img/cards/{{ currentCard }}.webp"
     />
@@ -32,6 +43,7 @@
     <div class="playedCardStack" id="playedCardStack">
       @for (playedCard of game?.playedCards; track playedCard; let card =
       $index) {
+      <!-- Die Abgelegte Karte. -->
       <img
         class="playedCard"
         id="playedCard"

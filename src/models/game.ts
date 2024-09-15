@@ -3,6 +3,9 @@ import { Injectable } from '@angular/core';
 @Injectable({
   providedIn: 'root',
 })
+/**
+ * public as Access Modifier.
+ */
 export class Game {
   public players: string[] = ['Hanz', 'Peter', 'Kos', 'Boris'];
   public stack: string[] = [];

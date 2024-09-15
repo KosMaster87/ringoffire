@@ -20,12 +20,13 @@
     position: absolute;
     width: clamp(80px, 15vw + 1rem, 180px);
     transition: transform 0.4s ease-in-out;
-    // transition: all 225ms;
+    transition: all 225ms;
   }
 }
 
 .topCard {
   cursor: pointer;
+  // transition: all 225ms ease-in-out;
 }
 
 .topCard:hover {
@@ -33,26 +34,10 @@
 }
 
 .pickCard {
-  // transition: all 225ms;
+  transition: all 225ms ease-in-out;
   animation: pickCardAnimation 1.2s ease-in-out;
   transform: scale(1) translateX(140px) translateY(-350px) rotate(-5deg);
   z-index: 2;
-}
-
-.playedCard {
-  // transform: "scale(1) translateX(" + calcPositionDieErstenVier(i) +
-  //   ") translateY(-350px) rotate(-10deg)";
-
-  width: clamp(80px, 15vw + 1rem, 180px);
-  transform: scale(1) translateX(140px) translateY(0) rotate(-5deg);
-  animation: dropCardAnimation 1.2s ease-in-out;
-  position: absolute;
-
-  > .cardStack_img {
-    position: absolute;
-    width: clamp(80px, 15vw + 1rem, 180px);
-    transform: scale(1) translateX(140px) translateY(-350px) rotate(-5deg);
-  }
 }
 
 .playedCardStack {
@@ -61,6 +46,22 @@
   width: 90%;
   top: 0;
   justify-content: center;
+}
+
+.playedCard {
+  // transform: "scale(1) translateX(" + calcPositionDieErstenVier(i) +
+  //   ") translateY(-350px) rotate(-10deg)";
+
+  width: clamp(80px, 15vw + 1rem, 180px);
+  transform: scale(1) translateX(140px) translateY(0) rotate(-5deg);
+  // animation: dropCardAnimation 1.2s ease-in-out;
+  position: absolute;
+
+  > .cardStack_img {
+    position: absolute;
+    width: clamp(80px, 15vw + 1rem, 180px);
+    transform: scale(1) translateX(140px) translateY(-350px) rotate(-5deg);
+  }
 }
 
 @keyframes pickCardAnimation {
