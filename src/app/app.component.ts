@@ -6,6 +6,8 @@ import { HeaderComponent } from './shared/components/header/header.component';
 import { GameComponent } from './game/game.component';
 import { PlayerComponent } from './player/player.component';
 import { RingOfFireService } from './ring-of-fire.service';
+import { MatButtonModule } from '@angular/material/button';
+import { MatIconModule } from '@angular/material/icon';
 
 @Component({
   selector: 'app-root',
@@ -17,6 +19,8 @@ import { RingOfFireService } from './ring-of-fire.service';
     HeaderComponent,
     GameComponent,
     PlayerComponent,
+    MatButtonModule,
+    MatIconModule,
   ],
   templateUrl: './app.component.html',
   styleUrl: './app.component.scss',
