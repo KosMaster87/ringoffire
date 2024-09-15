@@ -54,7 +54,7 @@
 
   width: clamp(80px, 15vw + 1rem, 180px);
   transform: scale(1) translateX(140px) translateY(0) rotate(-5deg);
-  // animation: dropCardAnimation 1.2s ease-in-out;
+  animation: dropCardAnimation 400ms ease-in-out;
   position: absolute;
 
   > .cardStack_img {
@@ -81,13 +81,19 @@
 
 @keyframes dropCardAnimation {
   0% {
-    transform: scale(1) translateX(140px) translateY(0) rotate(-5deg);
+    transform: scale(1.05) translateX(140px) translateY(0) rotate(-5deg);
+  }
+  20% {
+    transform: scale(1.04) translateX(140px) translateY(0) rotate(-5deg);
   }
   40% {
-    transform: scale(1.05) translateX(140px) translateY(-50px) rotate(-10deg);
+    transform: scale(1.03) translateX(140px) translateY(0) rotate(-5deg);
   }
   60% {
-    transform: scale(1.05) translateX(140px) translateY(-30px) rotate(-8deg);
+    transform: scale(1.02) translateX(140px) translateY(0) rotate(-5deg);
+  }
+  80% {
+    transform: scale(1.01) translateX(140px) translateY(0) rotate(-5deg);
   }
   100% {
     transform: scale(1) translateX(140px) translateY(0) rotate(-5deg);
