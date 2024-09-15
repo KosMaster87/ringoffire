@@ -39,6 +39,30 @@
   z-index: 2;
 }
 
+.playedCard {
+  // transform: "scale(1) translateX(" + calcPositionDieErstenVier(i) +
+  //   ") translateY(-350px) rotate(-10deg)";
+
+  width: clamp(80px, 15vw + 1rem, 180px);
+  transform: scale(1) translateX(140px) translateY(0) rotate(-5deg);
+  animation: dropCardAnimation 1.2s ease-in-out;
+  position: absolute;
+
+  > .cardStack_img {
+    position: absolute;
+    width: clamp(80px, 15vw + 1rem, 180px);
+    transform: scale(1) translateX(140px) translateY(-350px) rotate(-5deg);
+  }
+}
+
+.playedCardStack {
+  display: flex;
+  position: absolute;
+  width: 90%;
+  top: 0;
+  justify-content: center;
+}
+
 @keyframes pickCardAnimation {
   0% {
     transform: scale(1);
@@ -58,39 +82,13 @@
   0% {
     transform: scale(1) translateX(140px) translateY(0) rotate(-5deg);
   }
-  // 40% {
-  //   transform: scale(1.05) translateX(140px) translateY(-50px) rotate(-10deg);
-  // }
-  // 60% {
-  //   transform: scale(1.05) translateX(140px) translateY(-30px) rotate(-8deg);
-  // }
+  40% {
+    transform: scale(1.05) translateX(140px) translateY(-50px) rotate(-10deg);
+  }
+  60% {
+    transform: scale(1.05) translateX(140px) translateY(-30px) rotate(-8deg);
+  }
   100% {
     transform: scale(1) translateX(140px) translateY(0) rotate(-5deg);
   }
-}
-
-.playedCard {
-  transform: "scale(1) translateX(" + calcPositionDieErstenVier(i) +
-    ") translateY(-350px) rotate(-10deg)";
-
-  > .cardStack_img {
-    position: absolute;
-    width: clamp(80px, 15vw + 1rem, 180px);
-    transform: scale(1) translateX(140px) translateY(-350px) rotate(-5deg);
-  }
-}
-
-.playedCardStack {
-  display: flex;
-  position: absolute;
-  width: 90%;
-  top: 0;
-  justify-content: center;
-}
-
-.playedCard {
-  width: clamp(80px, 15vw + 1rem, 180px);
-  transform: scale(1) translateX(140px) translateY(0) rotate(-5deg);
-  animation: dropCardAnimation 1.2s ease-in-out;
-  position: absolute;
 }

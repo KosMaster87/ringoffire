@@ -2,16 +2,6 @@
 
 <section class="field" id="field">
   <div class="cardStack" id="cardStack">
-    <!-- <div *ngIf="false; then thenBlock; else elseBlock"></div>
-    <ng-template #thenBlock
-      >Zu rendernder Inhalt, wenn Bedingung erfüllt ist.
-      <img src="./../../assets/img/labelClean.webp" alt=""></ng-template
-    >
-    <ng-template #elseBlock
-      >Zu rendernder Inhalt, wenn Bedingung falsch ist.
-      <img src="./../../assets/img/cards/clubs_12.webp" alt="">
-      </ng-template
-    > -->
     @for (Card of [0, 1, 2, 3]; track Card; let i = $index) {
     <img
       [ngStyle]="{
@@ -39,56 +29,16 @@
       src="assets/img/cards/{{ currentCard }}.webp"
     />
 
-    <!-- <div *ngFor="let card of game.playedCard; let i = index">
-      <img [src]="'./../../assets/img/cards/' + card + '.webp'" alt="Card {{ i }}" />
-    </div> -->
-
-    <!-- <div
-      *ngFor="let playedCard of game.playedCards; let i = index"
-      class="playedCard"
-      [ngStyle]="{
-        transform:
-          'scale(1) translateX(' +
-          calcPositionDieErstenVier(i) +
-          ') translateY(-350px) rotate(-10deg)'
-      }"
-    >
-      <img
-        [src]="'assets/img/cards/' + playedCard + '.webp'"
-        alt="Card {{ i }}"
-      />
-    </div> -->
-
     <div class="playedCardStack" id="playedCardStack">
-      @for (PlayedCard of game?.playedCards; track PlayedCard; let card = $index)
-      {
+      @for (playedCard of game?.playedCards; track playedCard; let card =
+      $index) {
       <img
         class="playedCard"
         id="playedCard"
-        src="assets/img/cards/{{ PlayedCard }}.webp"
+        src="assets/img/cards/{{ playedCard }}.webp"
         alt=""
       />
       }
     </div>
-
-    <!-- <img
-      *ngFor="let card of [0]; let i = index"
-      [ngStyle]="{ transform: 'translateX(' + 1 * 80 + 'px)' }"
-      (click)="takeCard()"
-      class="cardStack_img topCard"
-      id="cardStack_img"
-      src="./../../assets/img/cards/clubs_1.png"
-      alt="Card cover {{ i }}"
-    /> -->
-
-    <!-- ALTERNATIVE -->
-    <!-- <img
-      *ngFor="let card of [0, 1, 2, 3, 4]; let i = index"
-      [ngStyle]="{ 'margin-left': (i * 11) + 'px' }"
-      class="cardStack_img"
-      id="cardStack_img"
-      src="./../../assets/img/cards/card_cover.png"
-      alt="Card cover {{ i }}"
-    /> -->
   </div>
 </section>

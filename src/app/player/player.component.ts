@@ -17,8 +17,6 @@ export class PlayerComponent {
   // @Input() playerActive: boolean = false;
 
   constructor(public game: Game) {}
-
-  // nestedArray = [
   //   {
   //     key1: 'Value 1-1',
   //     key2: 'Value 1-2',
