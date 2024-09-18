@@ -21,6 +21,7 @@ import {
   MatDialogTitle,
 } from '@angular/material/dialog';
 import { GameInfoComponent } from '../game-info/game-info.component';
+import { MatCardModule } from '@angular/material/card';
 
 @Component({
   selector: 'app-game',
@@ -33,6 +34,7 @@ import { GameInfoComponent } from '../game-info/game-info.component';
     FormsModule,
     MatDialogModule,
     GameInfoComponent,
+    MatCardModule,
   ],
   // changeDetection: ChangeDetectionStrategy.OnPush,
   templateUrl: './game.component.html',
@@ -46,6 +48,10 @@ export class GameComponent {
 
   constructor(public dialog: MatDialog) {
     console.log(this.game!.players);
+  }
+
+  selectCard(card: string) {
+    this.currentCard = card;
   }
 
   newGame() {

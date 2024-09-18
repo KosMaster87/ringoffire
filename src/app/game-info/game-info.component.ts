@@ -3,7 +3,6 @@ import {
   Injectable,
   Input,
   OnChanges,
-  SimpleChanges,
 } from '@angular/core';
 import { MatCardModule } from '@angular/material/card';
 
@@ -18,33 +17,21 @@ import { MatCardModule } from '@angular/material/card';
   styleUrl: './game-info.component.scss',
 })
 export class GameInfoComponent implements OnChanges {
-// export class GameInfoComponent {
+  @Input() card: string | undefined;
+
   title: string = '';
   description: string = '';
-  @Input() card: string = '';
+  currentCard: boolean | undefined;
 
-  ngOnChanges(changes: SimpleChanges): void {
-  // ngOnInit(changes: SimpleChanges): void {
-  console.log("In der OnChanges fn drinne!");
-  
-    if (changes['card'] && changes['card'].currentValue) {
-      console.log(this.card);
-      const cardNumber = +this.card.split('_')[1];
-      if (this.cardAction[cardNumber - 1]) {
-        this.title = this.cardAction[cardNumber - 1].title;
-        this.description = this.cardAction[cardNumber - 1].description;
-      }
+  ngOnChanges(): void {
+    // console.log(this.card);
+    if (this.card) {
+      let cardNumber = +this.card.split('_')[1];
+      this.title = this.cardAction[cardNumber - 1].title;
+      this.description = this.cardAction[cardNumber - 1].description;
+      // console.log(cardNumber);
     }
   }
-  // ngOnChanges(): void {
-  //   console.log(this.card);
-  //   if (this.card) {
-  //     let cardNumber = +this.card.split('_')[1];
-  //     this.title = this.cardAction[cardNumber - 1].title;
-  //     this.description = this.cardAction[cardNumber - 1].description;
-  //     console.log(cardNumber);
-  //   }
-  // }
 
   cardAction = [
     {
